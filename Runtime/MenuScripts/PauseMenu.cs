@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MenuScripts
+namespace skv_toolkit.MenuScripts
 {
     public class PauseMenu : MonoBehaviour
     {

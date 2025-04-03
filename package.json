@@ -1,14 +1,9 @@
 {
   "name": "com.simonskvara.skv_toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "skv_toolkit",
-  "description": "This is a package ",
-  "unity": "2019.1",
-  "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
-  ],
+  "description": "This is a package used for the Game A Week course for fast development. Includes useful scripts.",
+  "unity": "6000.0",
   "author": {
     "name": "Simon Skvara",
     "url": "https://gamaranger.itch.io/"

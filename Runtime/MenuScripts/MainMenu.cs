@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MenuScripts
+namespace skv_toolkit.MenuScripts
 {
     public class MainMenu : MonoBehaviour
     {
