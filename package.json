@@ -1,0 +1,18 @@
+{
+  "name": "com.simonskvara.skv_toolkit",
+  "version": "1.0.0",
+  "displayName": "skv_toolkit",
+  "description": "This is a package ",
+  "unity": "2019.1",
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "Simon Skvara",
+    "url": "https://gamaranger.itch.io/"
+  }
+}
+
+
