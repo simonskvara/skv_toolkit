@@ -1,16 +1,46 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-namespace skv_toolkit.MenuScripts
+public class PauseMenu : MonoBehaviour
 {
-    public class PauseMenu : MonoBehaviour
+    public static PauseMenu Instance;
+
+    public static bool GameIsPaused;
+
+    public GameObject pauseMenu;
+
+    [SerializeField] private GameObject eventSystemObject;
+
+    private void Awake()
     {
-        public static bool GameIsPaused;
-
-        public GameObject pauseMenu;
-
-        private void Update()
+        if (Instance == null)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void Start()
+    {
+        pauseMenu.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (SceneManager.GetActiveScene().name != "MainMenu")
             {
                 if (GameIsPaused)
                 {
@@ -22,20 +52,47 @@ namespace skv_toolkit.MenuScripts
                 }
             }
         }
+    }
 
-        public void Resume()
-        {
-            Time.timeScale = 1f;
-            pauseMenu.SetActive(false);
-            GameIsPaused = false;
-        }
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+        GameIsPaused = false;
+    }
 
-        void Pause()
+    void Pause()
+    {
+        pauseMenu.SetActive(true);
+        
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+
+    public void RestartScene()
+    {
+        Resume();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        bool sceneHasEventSystem = false;
+        foreach (var es in FindObjectsByType<EventSystem>(FindObjectsSortMode.None))
         {
-            Time.timeScale = 0f;
-            pauseMenu.SetActive(true);
-            GameIsPaused = true;
+            if (es.gameObject.scene == scene)
+            {
+                sceneHasEventSystem = true;
+                break;
+            }
         }
-    
+        
+        eventSystemObject.SetActive(!sceneHasEventSystem);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

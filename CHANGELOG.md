@@ -10,3 +10,11 @@
 ### Small fixes
 
 - Fixing the namespaces for the menu scripts
+
+
+## [1.1.0] - 9. April 2025
+### First Update
+
+- Updating the PauseMenu script
+  - A PauseMenu prefab was also added
+- Adding a MainMenu scene
