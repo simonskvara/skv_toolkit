@@ -18,3 +18,9 @@
 - Updating the PauseMenu script
   - A PauseMenu prefab was also added
 - Adding a MainMenu scene
+
+## [1.1.1] - 9. April 2025
+### Bug Fixing
+
+- Sample was improperly setup
+  - Now the sample can be imported
