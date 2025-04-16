@@ -9,13 +9,13 @@ namespace skv_toolkit.MenuScripts
         {
             Time.timeScale = 1f;
             PauseMenu.Instance.Resume();
-            SceneManager.LoadScene(sceneName);
+            SceneLoader.LoadScene(sceneName);
         }
 
         public void ReloadScene()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneLoader.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void Quit()

@@ -71,7 +71,7 @@ namespace skv_toolkit.MenuScripts
         public void RestartScene()
         {
             Resume();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneLoader.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
