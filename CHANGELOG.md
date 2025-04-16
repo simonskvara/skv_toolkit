@@ -24,3 +24,9 @@
 
 - Sample was improperly setup
   - Now the sample can be imported
+
+##  [1.1.2] - 16. April 2025
+### Bug Fixing
+
+- Fixed a bug where pause menu wouldn't close, and wouldn't be on top
+- Pause menu script namespace

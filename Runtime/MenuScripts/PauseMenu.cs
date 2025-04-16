@@ -1,98 +1,97 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+namespace skv_toolkit.MenuScripts
 {
-    public static PauseMenu Instance;
-
-    public static bool GameIsPaused;
-
-    public GameObject pauseMenu;
-
-    [SerializeField] private GameObject eventSystemObject;
-
-    private void Awake()
+    public class PauseMenu : MonoBehaviour
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        public static PauseMenu Instance;
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+        public static bool GameIsPaused;
 
-    private void Start()
-    {
-        pauseMenu.SetActive(false);
-    }
+        public GameObject pauseMenu;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        [SerializeField] private GameObject eventSystemObject;
+
+        private void Awake()
         {
-            if (SceneManager.GetActiveScene().name != "MainMenu")
+            if (Instance == null)
             {
-                if (GameIsPaused)
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void Start()
+        {
+            pauseMenu.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (SceneManager.GetActiveScene().name != "MainMenu")
                 {
-                    Resume();
-                }
-                else
-                {
-                    Pause();
+                    if (GameIsPaused)
+                    {
+                        Resume();
+                    }
+                    else
+                    {
+                        Pause();
+                    }
                 }
             }
         }
-    }
 
-    public void Resume()
-    {
-        Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
-        GameIsPaused = false;
-    }
-
-    void Pause()
-    {
-        pauseMenu.SetActive(true);
-        
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-    }
-
-
-    public void RestartScene()
-    {
-        Resume();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        bool sceneHasEventSystem = false;
-        foreach (var es in FindObjectsByType<EventSystem>(FindObjectsSortMode.None))
+        public void Resume()
         {
-            if (es.gameObject.scene == scene)
-            {
-                sceneHasEventSystem = true;
-                break;
-            }
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
+            GameIsPaused = false;
         }
-        
-        eventSystemObject.SetActive(!sceneHasEventSystem);
-    }
 
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        void Pause()
+        {
+            pauseMenu.SetActive(true);
+        
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
+
+
+        public void RestartScene()
+        {
+            Resume();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            bool sceneHasEventSystem = false;
+            foreach (var es in FindObjectsByType<EventSystem>(FindObjectsSortMode.None))
+            {
+                if (es.gameObject.scene == scene)
+                {
+                    sceneHasEventSystem = true;
+                    break;
+                }
+            }
+        
+            eventSystemObject.SetActive(!sceneHasEventSystem);
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 }
