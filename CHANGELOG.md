@@ -36,3 +36,9 @@
 
 - Added a loading screen
   - Therefore, added a scene loader script to manage scene loading
+
+## [1.2.3] - 18. April 2025
+### Pause Menu cursor
+
+- Added a lock state function to the pause menu
+  - For game where the cursor is not visible and should be visible when opening the pause menu

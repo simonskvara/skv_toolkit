@@ -6,6 +6,9 @@ namespace skv_toolkit.MenuScripts
 {
     public class PauseMenu : MonoBehaviour
     {
+        [Tooltip("Turn on when you need to unlock the cursor when pause menu is active")]
+        public bool lockCursor;
+        
         public static PauseMenu Instance;
 
         public static bool GameIsPaused;
@@ -57,6 +60,12 @@ namespace skv_toolkit.MenuScripts
             Time.timeScale = 1f;
             pauseMenu.SetActive(false);
             GameIsPaused = false;
+
+            if (lockCursor)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
         }
 
         void Pause()
@@ -65,8 +74,13 @@ namespace skv_toolkit.MenuScripts
         
             Time.timeScale = 0f;
             GameIsPaused = true;
-        }
 
+            if (lockCursor)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+        }
 
         public void RestartScene()
         {
@@ -87,6 +101,12 @@ namespace skv_toolkit.MenuScripts
             }
         
             eventSystemObject.SetActive(!sceneHasEventSystem);
+
+            if (scene.name == "MainMenu")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         private void OnDestroy()
