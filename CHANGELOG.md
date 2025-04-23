@@ -42,3 +42,11 @@
 
 - Added a lock state function to the pause menu
   - For game where the cursor is not visible and should be visible when opening the pause menu
+
+## [1.3.0] - 23. April 2025
+### Some architecture
+
+- Most of my architecture of what I would be using was done previously so I'm just adding some small stuff
+  - GameManager
+  - Audio Settings and audio managing
+- Edited the README.MD
