@@ -50,3 +50,8 @@
   - GameManager
   - Audio Settings and audio managing
 - Edited the README.MD
+
+## [1.3.1] - 24. April 2025
+### Audio Settings
+
+- Adding audio settings to the main menu

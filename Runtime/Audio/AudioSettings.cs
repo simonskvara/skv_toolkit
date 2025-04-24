@@ -22,8 +22,8 @@ namespace skv_toolkit.skv_tools_toolkit.Runtime.Audio
             sfxSlider.onValueChanged.RemoveAllListeners();
         
             masterSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
-            musicSlider.value  = PlayerPrefs.GetFloat("MusicVolume", 1f);
-            sfxSlider.value    = PlayerPrefs.GetFloat("SFXVolume", 1f);
+            musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
+            sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
         
             masterSlider.onValueChanged.AddListener(AudioManager.Instance.SetMasterVolume);
             musicSlider.onValueChanged.AddListener(AudioManager.Instance.SetMusicVolume);
@@ -32,11 +32,6 @@ namespace skv_toolkit.skv_tools_toolkit.Runtime.Audio
             AudioManager.Instance.SetMasterVolume(masterSlider.value);
             AudioManager.Instance.SetMusicVolume(musicSlider.value);
             AudioManager.Instance.SetSFXVolume(sfxSlider.value);
-        }
-    
-        void MasterVolumeChanged(float value)
-        {
-        
         }
     }
 }
