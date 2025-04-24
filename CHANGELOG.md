@@ -55,3 +55,13 @@
 ### Audio Settings
 
 - Adding audio settings to the main menu
+
+## [1.3.2] - 24. April 2025
+### Miscellaneous scripts from other projects
+
+- A bowling manager
+  - Moving the ball and determining at what force it's thrown
+  - Can display force in a slider
+- Scene preview
+  - Place a camera in a scene with a tag PreviewCamera and when the scene is saved, it saves the camera view as a sprite
+  - LevelButton script takes the sprite and can showcase it in an image 
