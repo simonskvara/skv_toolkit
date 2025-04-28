@@ -65,3 +65,9 @@
 - Scene preview
   - Place a camera in a scene with a tag PreviewCamera and when the scene is saved, it saves the camera view as a sprite
   - LevelButton script takes the sprite and can showcase it in an image 
+
+## [1.3.3] - 28. April 2025
+### Bug Fixing
+
+- Missing sample scene in package 
+  - added it now

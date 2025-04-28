@@ -1,6 +1,6 @@
 {
   "name": "com.simonskvara.skv_toolkit",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "displayName": "skv_toolkit",
   "description": "This is a package used for the Game A Week course for fast development. Includes useful scripts.",
   "unity": "6000.0",
@@ -13,6 +13,11 @@
       "displayName": "Main Menu Scene",
       "description": "Contains a main menu scene",
       "path": "Samples~/MainMenu"
+    },
+    {
+      "displayName": "Loading Screen",
+      "description": "Contains a main menu scene",
+      "path": "Samples~/LoadingScreen"
     }
   ]
 }
