@@ -71,3 +71,9 @@
 
 - Missing sample scene in package 
   - added it now
+
+## [1.4.0] - 6. May 2025
+### More pause menu functions
+
+- Added a list of scenes where pause menu shouldn't open
+- Added methods to disable and enable pause menu
