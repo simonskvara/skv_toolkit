@@ -705,6 +705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006fbb6477a1b9c4d9b6a5d5926d1c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forbiddenScenes:
+  - MainMenu
+  - LoadingScreen
+  lockCursor: 0
   pauseMenu: {fileID: 175899855549812297}
   eventSystemObject: {fileID: 5168301333123621166}
 --- !u!114 &4557329718469833831

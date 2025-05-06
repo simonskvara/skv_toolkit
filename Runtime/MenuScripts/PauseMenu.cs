@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,9 @@ namespace skv_toolkit.MenuScripts
 {
     public class PauseMenu : MonoBehaviour
     {
+        [Tooltip("Scenes in which the pause menu should not open")]
+        public List<string> forbiddenScenes;
+        
         [Tooltip("Turn on when you need to unlock the cursor when pause menu is active")]
         public bool lockCursor;
         
@@ -16,6 +20,8 @@ namespace skv_toolkit.MenuScripts
         public GameObject pauseMenu;
 
         [SerializeField] private GameObject eventSystemObject;
+
+        private bool _canPause;
 
         private void Awake()
         {
@@ -30,6 +36,8 @@ namespace skv_toolkit.MenuScripts
             }
 
             SceneManager.sceneLoaded += OnSceneLoaded;
+            
+            EnablePauseMenu();
         }
 
         private void Start()
@@ -41,7 +49,7 @@ namespace skv_toolkit.MenuScripts
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (SceneManager.GetActiveScene().name != "MainMenu")
+                if (CanOpen())
                 {
                     if (GameIsPaused)
                     {
@@ -109,6 +117,32 @@ namespace skv_toolkit.MenuScripts
             }
         }
 
+        private bool CanOpen()
+        {
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                return false;
+            }
+            
+            if (forbiddenScenes.Contains(SceneManager.GetActiveScene().name))
+            {
+                return false;
+            }
+
+            return _canPause;
+        }
+
+        public void DisablePauseMenu()
+        {
+            _canPause = false;
+        }
+
+        public void EnablePauseMenu()
+        {
+            _canPause = true;
+            
+        }
+        
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
