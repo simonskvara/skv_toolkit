@@ -77,3 +77,12 @@
 
 - Added a list of scenes where pause menu shouldn't open
 - Added methods to disable and enable pause menu
+
+## [1.5.0] - 12. May 2025
+### High score system
+
+- Implemented a high score system
+- Simple string and value combo
+- Saves it as json in persistent data path
+- highscore manager 
+  - call AddEntry to add it to the highscores
