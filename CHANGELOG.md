@@ -86,3 +86,8 @@
 - Saves it as json in persistent data path
 - highscore manager 
   - call AddEntry to add it to the highscores
+
+## [1.5.1] - 9. May 2025
+### Bug fix
+
+- fixed a bug in the main menu, where it won't work if there is no pause menu

@@ -8,7 +8,10 @@ namespace skv_toolkit.MenuScripts
         public void LoadScene(string sceneName)
         {
             Time.timeScale = 1f;
-            PauseMenu.Instance.Resume();
+            if (PauseMenu.Instance != null)
+            {
+                PauseMenu.Instance.Resume();
+            }
             SceneLoader.LoadScene(sceneName);
         }
 
