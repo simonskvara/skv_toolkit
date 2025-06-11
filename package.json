@@ -1,6 +1,6 @@
 {
   "name": "com.simonskvara.skv_toolkit",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "displayName": "skv_toolkit",
   "description": "This is a package used for the Game A Week course for fast development. Includes useful scripts.",
   "unity": "6000.0",
@@ -18,6 +18,11 @@
       "displayName": "Loading Screen",
       "description": "Contains a main menu scene",
       "path": "Samples~/LoadingScreen"
+    },
+    {
+      "displayName": "Dialogue Example Scene",
+      "description": "Contains an example for the dialogue system using Yarn Spinner",
+      "path": "Samples~/YarnExampleScene"
     }
   ]
 }

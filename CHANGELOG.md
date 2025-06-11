@@ -87,7 +87,12 @@
 - highscore manager 
   - call AddEntry to add it to the highscores
 
-## [1.5.1] - 9. May 2025
+## [1.5.1] - 9. June 2025
 ### Bug fix
 
 - fixed a bug in the main menu, where it won't work if there is no pause menu
+
+## [1.6.0] - 11. June 2025
+### Dialogue System
+
+- Added an example scene using Yarn Spinner

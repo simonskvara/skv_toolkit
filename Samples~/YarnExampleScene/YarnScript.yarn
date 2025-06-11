@@ -1,0 +1,102 @@
+﻿title: Start
+---
+<<declare $knife_sharpened = false>> 
+<<declare $heard_whispers = false>> 
+<<declare $shadow_moved = false>>
+
+The streetlights hum like dying flies as I walk. You're following me, aren't you? In the puddles? In the cracks? No matter.
+-> Why are you carrying that knife?
+    Because the symphony demands it! Can't you hear the dissonance? 
+    Every time Henderson mows his lawn... *sniff*... the grass screams my name. 
+    -> That's just wind
+        <<set $knife_sharpened = true>>
+        Just wind? When the blades cut through dandelions? *mimics slicing motion* 
+        That's when the whispers started. "Trim the weed," they said. "Prune the branch."
+        -> Continue monologue
+        <<jump ContinueMonologue>>
+    -> You need help
+        Help? HELP? *spits* 
+        The doctors pumped me full of lies! Pill-shaped surveillance devices!
+        <<set $heard_whispers = true>>
+        Now the moon tells me truths through the fillings in my teeth. Ding ding ding! Henderson o'clock!
+        -> Continue monologue
+        <<jump ContinueMonologue>>
+    -> (Say nothing. Watch his eyes dart)
+        *laughs wetly* 
+        Silence is complicity. You see it too - the way his curtains twitch? 
+        <<set $shadow_moved = true>>
+        <<jump ContinueMonologue>>
+        His shadow grows teeth at midnight. Ate three of my cats. Proof is in the litterbox!
+=== 
+
+title: ContinueMonologue
+---
+The pavement sticks to my shoes like dried blood. Remember little Timmy? 
+-> The missing boy?
+    <<if $knife_sharpened>>
+        *taps temple* Henderson "found" him in the river. 
+        But the crayfish told me... *leans close*... he smelled of Henderson's special fertilizer.
+    <<else>>
+        They think he drowned. FOOLS! 
+        I found his teddy bear in Henderson's toolshed. Covered in... garden shears.
+    <<endif>>
+    <<jump FinalApproach>>
+-> I don't know Timmy
+    Of course you don't! Memory thieves work for HIM! 
+    They steal recollections through Wi-Fi. That's why you forgot your mother's face!
+    *scratches neck raw*
+    <<jump FinalApproach>>
+-> (Observe his trembling hands)
+    *suddenly still* 
+    You noticed? The tremors stop when I hold the knife. Coincidence? 
+    *blade gleams under streetlight*
+    Equilibrium!
+    <<jump FinalApproach>>
+===
+
+title: FinalApproach
+---
+Almost there. His porch light burns like a false angel. 
+-> This is madness
+    <<if $heard_whispers and $shadow_moved>>
+        Madness? When his shadow brings me cat collars like offerings? 
+        When the lawnmower growls "NOW OR NEVER"?
+        *grips knife* The math is perfect: One life for seven billion. 
+        I'm the decimal point!
+    <<else>>
+        *spittle flies* 
+        YOU'RE one of them! Your eyes glow faintly green! 
+        *rushes forward* Henderson first, then YOU!
+    <<endif>>
+    <<jump End>>
+-> Run away now
+    *blocks path* 
+    Too late. The cicadas started chanting your name. 
+    *tilts head* Listen... can't you hear? 
+    "Wit-ness-es-must-be-silenced..." 
+    *smiles with too many teeth*
+    <<jump End>>
+-> (Try to reason) What if you're wrong?
+    <<if not $knife_sharpened>>
+        *blinks rapidly* 
+        Wrong? *fumbles with blunt knife* 
+        But... the mailbox... it coughed up my birth certificate with HENDERSON'S signature...
+        *voice cracks* Aren't signatures proof?
+    <<else>>
+        *strokes sharpened blade* 
+        Beautiful logic: If I'm right, I save humanity. 
+        If I'm wrong... *shrugs* 
+        Then I've cured Henderson of breathing. Win-win!
+    <<endif>>
+    <<jump End>>
+===
+
+title: End
+---
+*door creaks open* 
+Shhh... the finale begins. 
+When the screaming starts, count the notes! 
+It'll sound like C-sharp...
+-> (Fade to black as knife rises)
+    *curtain falls on a single choked syllable*
+===
