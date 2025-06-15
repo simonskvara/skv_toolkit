@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,11 @@ namespace skv_toolkit.skv_tools_toolkit.Runtime.Audio
         private void Start()
         {
             SetupSliders();
+        }
+
+        private void OnEnable()
+        {
+            RefreshSliders();
         }
 
         void SetupSliders()
@@ -32,6 +38,18 @@ namespace skv_toolkit.skv_tools_toolkit.Runtime.Audio
             AudioManager.Instance.SetMasterVolume(masterSlider.value);
             AudioManager.Instance.SetMusicVolume(musicSlider.value);
             AudioManager.Instance.SetSFXVolume(sfxSlider.value);
+        }
+
+        void RefreshSliders()
+        {
+            UpdateSlider(masterSlider, PlayerPrefs.GetFloat("MasterVolume", 1f));
+            UpdateSlider(musicSlider, PlayerPrefs.GetFloat("MusicVolume", 1f));
+            UpdateSlider(sfxSlider, PlayerPrefs.GetFloat("SFXVolume", 1f));
+        }
+
+        void UpdateSlider(Slider slider, float volume)
+        {
+            slider.value = volume;
         }
     }
 }
