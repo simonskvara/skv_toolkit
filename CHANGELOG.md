@@ -96,3 +96,14 @@
 ### Dialogue System
 
 - Added an example scene using Yarn Spinner
+
+## [1.6.1] - 15. June 2025
+
+- audio settings slider refresh value if more than one settings is present in game, specifically done for the pause menu
+
+## [1.7.0] - 18. June 2025
+### Save System
+
+- added a simple save system
+  - Save and load for JSON and PlayerPrefs
+  - utility methods
