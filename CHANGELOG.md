@@ -107,3 +107,8 @@
 - added a simple save system
   - Save and load for JSON and PlayerPrefs
   - utility methods
+
+## [1.7.1] - 3. July 2025
+### Documentation
+
+- Added documentation to the README file
