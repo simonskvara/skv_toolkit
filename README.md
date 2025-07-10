@@ -97,6 +97,6 @@ Creates a preview sprite image from a preview camera. Can bu used to speed up ta
 - you can change the resolution of the image that is taken
 - you can change the location to where it is saved, i would recommend to keep it in the Resources folder
 
-## Cheat Console
+## Cheat Console, Keybinding
 
 A joker was taken here
