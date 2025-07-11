@@ -1,6 +1,6 @@
 {
   "name": "com.simonskvara.skv_toolkit",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "displayName": "skv_toolkit",
   "description": "This is a package used for the Game A Week course for fast development. Includes useful scripts.",
   "unity": "6000.0",

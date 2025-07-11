@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,9 @@ namespace skv_toolkit.MenuScripts
         [SerializeField] private GameObject eventSystemObject;
 
         private bool _canPause;
+
+        public UnityEvent OnMenuOpen;
+        public UnityEvent OnMenuClosed;
 
         private void Awake()
         {
@@ -68,6 +72,8 @@ namespace skv_toolkit.MenuScripts
             Time.timeScale = 1f;
             pauseMenu.SetActive(false);
             GameIsPaused = false;
+            
+            OnMenuClosed?.Invoke();
 
             if (lockCursor)
             {
@@ -78,6 +84,7 @@ namespace skv_toolkit.MenuScripts
 
         void Pause()
         {
+            OnMenuOpen?.Invoke();
             pauseMenu.SetActive(true);
         
             Time.timeScale = 0f;

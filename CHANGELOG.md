@@ -112,3 +112,8 @@
 ### Documentation
 
 - Added documentation to the README file
+
+## [1.7.2] - 11. July 2025
+### pause menu update
+
+- added helper unity events
