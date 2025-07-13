@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -146,8 +147,13 @@ namespace skv_toolkit.MenuScripts
 
         public void EnablePauseMenu()
         {
+            StartCoroutine(DelayEnableMenu());
+        }
+
+        private IEnumerator DelayEnableMenu()
+        {
+            yield return new WaitForEndOfFrame();
             _canPause = true;
-            
         }
         
         private void OnDestroy()
